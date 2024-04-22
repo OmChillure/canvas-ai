@@ -6,7 +6,7 @@ import {
   createRouteMatcher
 } from "@clerk/nextjs/server"
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"])
+const isProtectedRoute = createRouteMatcher(["/dashboard"])
 
 export default clerkMiddleware((auth, request) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -14,5 +14,5 @@ export default clerkMiddleware((auth, request) => {
 })
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"]
 }
